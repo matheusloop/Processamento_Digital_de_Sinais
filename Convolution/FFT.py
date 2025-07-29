@@ -1,22 +1,10 @@
 import numpy as np
+from utils import zero_padding
 
 # Retorna o vetor com os valores de WN de 0 até N/2 - 1
 def W_N(N):
   k = np.arange(0, N/2)
   return np.exp(-2j*np.pi/N)**k
-
-
-# Faz o zero padding do sinal para a potência de 2 mais próxima ou para o valor de N
-def zero_padding(signal, N=None):
-  if N == None:
-    l = np.ceil(np.log2(len(signal)))
-    N = int(2**l)
-
-  signal_zp = np.zeros(N)
-  signal_zp[:len(signal)] = signal
-
-  return signal_zp
-
 
 # Faz o cálculo recursivo da FFT
 def calculate_fft(signal):
@@ -43,6 +31,10 @@ def calculate_fft(signal):
 
 # Calcula a FFT ajustando o número de amostras
 def myFFT(signal, N = None):
+  if N == None:
+    l = np.ceil(np.log2(len(signal)))
+    N = int(2**l)
+
   # Faz o zero padding no sinal
   signal_zp = zero_padding(signal, N)
 
