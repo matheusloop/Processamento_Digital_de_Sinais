@@ -41,6 +41,11 @@ def myFFT(signal, N = None):
   # Retorna a FFT do sinal
   return calculate_fft(signal_zp)
 
+def myFFTShift(fft):
+  N = len(fft)
+
+  return np.roll(fft, N//2)
+
 
 # Faz o cálculo recursivo da IFFT
 def calculate_ifft(espectrum):
