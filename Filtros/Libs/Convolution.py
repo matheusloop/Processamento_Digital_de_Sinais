@@ -1,5 +1,5 @@
-from FFT import *
-from utils import zero_padding
+from .FFT import *
+from .utils import zero_padding
 
 def myConvolution(signal1, signal2):
     L = len(signal1) #Determina o comprimento do primeiro Sinal

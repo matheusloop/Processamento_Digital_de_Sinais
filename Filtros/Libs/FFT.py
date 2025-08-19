@@ -1,5 +1,5 @@
 import numpy as np
-from utils import zero_padding
+from .utils import zero_padding
 
 # Retorna o vetor com os valores de WN de 0 até N/2 - 1
 def W_N(N):
