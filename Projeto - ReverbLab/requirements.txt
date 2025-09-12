@@ -1,0 +1,7 @@
+cffi==2.0.0
+numpy==2.3.3
+pycparser==2.23
+scipy==1.16.2
+setuptools==78.1.1
+sounddevice==0.5.2
+wheel==0.45.1

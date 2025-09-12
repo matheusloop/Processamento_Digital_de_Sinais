@@ -1,6 +1,7 @@
+'''pip install -r requirements.txt'''
+
 import sounddevice as sd
 import numpy as np
-import keyboard
 
 from ReberbLab_libs.ReverbLab_utils import *
 
