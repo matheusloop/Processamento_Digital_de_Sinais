@@ -5,12 +5,7 @@ import numpy as np
 
 from ReberbLab_libs.ReverbLab_utils import *
 
-# Tamanho do bloco de áudio
-M = 1024
-
-# Taxa de amostragem
-fs = 44100
-
+''' SELECIONANDO A REVERBERAÇÃO '''
 # Opções de reverberação disponíveis
 titles = [
     'Normal',
@@ -30,9 +25,17 @@ for i, title in enumerate(titles):
     print(f"[{i+1}] -> {title}")
 print('='*40)
 
-
 reverb_choosen = int(input("Escolha o reverb(1-9): "))
 
+''' CONFIGURAÇÕES DE ÁUDIO E STREAM '''
+
+# Tamanho do bloco de áudio
+M = 1024
+
+# Taxa de amostragem
+fs = 44100
+
+# Carrega a resposta em frequência do reverb escolhido
 H, N = getReverbFrequencyResponse(M, title=titles[reverb_choosen-1])
 
 # Vetor auxiliar para o método overlap-add
